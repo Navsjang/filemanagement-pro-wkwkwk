@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <button id="hamburger" class="hamburger" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </header>
+
+    <nav id="mainMenu" class="side-menu hidden" aria-hidden="true">
+        <ul>
+            <li><a href="#" data-page="home">Home</a></li>
+            <li><a href="#" data-page="topics">Topics</a></li>
+            <li><a href="#" data-page="tools">Tools</a></li>
+            <li><a href="#" data-page="quiz">Quiz</a></li>
+            <li><a href="#" data-page="download">Download</a></li>
+        </ul>
+    </nav>
+
+    <main id="app">
+        <section id="home" class="page">
+            <div class="hero-center">
+                <h1>File Management</h1>
+                <p>Master file organization with interactive quests.</p>
+            </div>
+        </section>
+
+        <section id="topics" class="page hidden">
+            <h2>Choose Your Quest</h2>
+            <div class="topics-list">
+                <button class="topic-btn" data-topic="paths">Quest 1: Paths of Destiny (Absolute vs. Relative)</button>
+                <button class="topic-btn" data-topic="search">Quest 2: Search for the Lost Files</button>
+                <button class="topic-btn" data-topic="organize">Quest 3: Folder Fortress</button>
+            </div>
+            <article id="topicContent" class="topic-content"></article>
+        </section>
+
+        <section id="tools" class="page hidden">
+            <h2>Tools — File Explorer</h2>
+            <div class="explorer-window">
+                <div class="explorer-header">
+                    <span>File Explorer</span>
+                    <button id="newFolderBtn">New Folder</button>
+                </div>
+                <div class="explorer-body">
+                    <div class="sidebar">
+                        <div class="sidebar-item active" data-category="documents">Documents</div>
+                        <div class="sidebar-item" data-category="pictures">Pictures</div>
+                        <div class="sidebar-item" data-category="music">Music</div>
+                    </div>
+                    <div class="main-content">
+                        <div class="toolbar">
+                            <input id="searchInput" placeholder="Search folders" />
+                            <button id="searchBtn">🔍</button>
+                        </div>
+                        <div id="fileList" class="file-list">
+                            <p id="noFoldersMsg">Select a category to view folders.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="page hidden">
+            <h2>Quiz — Test Your Knowledge</h2>
+            <div id="quizArea"></div>
+        </section>
+
+        <section id="download" class="page hidden">
+            <h2>Download</h2>
+            <p>Scan the QR code to download resources.</p>
+            <img src="assets/images/fake_qr_code.png" alt="Fake QR Code" style="max-width:200px;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMDAwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5GYWtlIFFSPC90ZXh0Pjwvc3ZnPg==';">
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>Prepared for: Navsjang • File Management educational demo</small>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
