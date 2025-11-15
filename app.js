@@ -312,40 +312,5 @@ D:\\</pre>
                 let results = [];
                 for (const [cat, folderList] of Object.entries(folders)) {
                     folderList.forEach(folder => {
-                        if (folder.toLowerCase().includes(query)) {
-                            results.push(`${folder} found in ${cat.charAt(0).toUpperCase() + cat.slice(1)}`);
-                        }
-                    });
-                }
-                fileList.innerHTML = results.length ? results.map(r => `<div class="file-item">${r}</div>`).join('') : '<p>No folders found.</p>';
-                if (noFoldersMsg) noFoldersMsg.style.display = 'none';
-            };
-        }
+                        if (folder.toLowerCase().includes(query))
 
-        renderFolders();
-    }
-
-    function renderFolders() {
-        const fileList = document.getElementById('fileList');
-        const noFoldersMsg = document.getElementById('noFoldersMsg');
-        const folderList = folders[currentCategory];
-        if (folderList.length > 0) {
-            fileList.innerHTML = folderList.map(folder => `<div class="file-item folder-item">${folder}</div>`).join('');
-            if (noFoldersMsg) noFoldersMsg.style.display = 'none';
-        } else {
-            fileList.innerHTML = '';
-            if (noFoldersMsg) noFoldersMsg.style.display = 'block';
-        }
-    }
-
-    const quizQuestions = [
-        { q: 'Which is an absolute path?', opts: ['Documents/report.txt', 'C:\\Users\\John\\report.txt', '../report.txt'], a: 1 },
-        { q: 'Which operator finds files starting with "report"?', opts: ['*report*', 'report*', '*.report'], a: 1 },
-        { q: 'Where should music files be stored?', opts: ['Documents', 'Images', 'Music'], a: 2 },
-        { q: 'What does ".." mean in a path?', opts: ['Current folder', 'Parent folder', 'Root folder'], a
-
-    showPage('home');
-} catch (error) {
-    console.error('Error:', error);
-
-}
