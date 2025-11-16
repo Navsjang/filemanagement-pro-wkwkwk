@@ -25,7 +25,7 @@ try {
             el.scrollIntoView({ behavior: 'smooth' });
         }
         if (page === 'tools') initTools();
-        if (page === 'quiz') loadQuiz();
+        if (page === 'icebreaker') loadIceBreaker();
     }
 
     // Topic descriptions with images
@@ -339,7 +339,7 @@ D:\\</pre>
         }
     }
 
-    const quizQuestions = [
+    const iceBreakerQuestions = [
         { q: 'Which is an absolute path?', opts: ['Documents/report.txt', 'C:\\Users\\John\\report.txt', '../report.txt'], a: 1 },
         { q: 'Which operator finds files starting with "report"?', opts: ['*report*', 'report*', '*.report'], a: 1 },
         { q: 'Where should music files be stored?', opts: ['Documents', 'Images', 'Music'], a: 2 },
@@ -347,11 +347,11 @@ D:\\</pre>
         { q: 'Which is a relative path?', opts: ['/home/user/Projects/report.txt', 'Projects/report.txt', 'C:\\report.txt'], a: 1 }
     ];
 
-    function loadQuiz() {
-        const area = document.getElementById('quizArea');
+    function loadIceBreaker() {
+        const area = document.getElementById('iceBreakerArea');
         if (!area) return;
         area.innerHTML = '';
-        quizQuestions.forEach((qq, idx) => {
+        iceBreakerQuestions.forEach((qq, idx) => {
             const div = document.createElement('div'); div.className = 'quiz-card';
             div.innerHTML = `<p><strong>Q${idx + 1}:</strong> ${qq.q}</p>`;
             qq.opts.forEach((opt, i) => {
